@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "Uno2023",
+  "display": "standalone",
+  "name": "Uno2023",
+  "short_name": "Uno2023",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
