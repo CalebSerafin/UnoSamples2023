@@ -10,5 +10,11 @@
 	<StackPanel HorizontalAlignment="Center"
 				VerticalAlignment="Center">
 		<TextBlock Text="Hello Uno Platform" />
-	</StackPanel>
+        <ContentControl x:Name="WebViewContentControl" />
+        <!--<WebView2
+			x:Name="WebViewControl"
+			Source="https://platform.uno/docs/articles/interop/wasm-javascript-1.html"
+			Width="400"
+			Height="400" />-->
+    </StackPanel>
 </Page>

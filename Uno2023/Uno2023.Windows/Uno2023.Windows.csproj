@@ -15,10 +15,18 @@
 		<!-- <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained> -->
 		<!-- This bundles the .NET Core libraries (Uncomment for packaged builds)  -->
 		<SelfContained>true</SelfContained>
+		<StartupObject>UnoWinUIQuickStart.Program</StartupObject>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'" />
 
 	<ItemGroup>
 		<Content Include="Images\**" />
+		<None Remove="Pages\WindowsWebView.xaml" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 
@@ -45,23 +53,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--
-		If you encounter this error message:
-
-			error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-			Please update to a newer .NET SDK in order to reference this assembly.
-
-		This means that the two packages below must be aligned with the "build" version number of
-		the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-		must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-		-->
-		<!-- <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22621.28" />
-		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22621.28" /> -->
+		<ProjectReference Include="..\Uno2023\Uno2023.csproj" />
+		<ProjectReference Include="..\Uno2023.DataContracts\Uno2023.DataContracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Uno2023\Uno2023.csproj" />
-		<ProjectReference Include="..\Uno2023.DataContracts\Uno2023.DataContracts.csproj" />
+	  <Page Update="Pages\WindowsWebView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
 
 	<Import Project="..\Uno2023.Base\base.props" />

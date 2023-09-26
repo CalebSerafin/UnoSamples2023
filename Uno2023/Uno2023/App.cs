@@ -4,6 +4,9 @@ public class App : Application {
     private static Window? _window;
     public static IHost? Host { get; private set; }
 
+    public static void ConfigureServices(Action<HostBuilderContext, IServiceCollection> configurator) => serviceConfigurators.Add(configurator);
+    static readonly List<Action<HostBuilderContext, IServiceCollection>> serviceConfigurators = new();
+
     protected override void OnLaunched(LaunchActivatedEventArgs args) {
         var builder = this.CreateBuilder(args)
 
@@ -42,6 +45,8 @@ public class App : Application {
                 .ConfigureServices((context, services) => {
                     // TODO: Register your services
                     //services.AddSingleton<IMyService, MyService>();
+                    foreach (var configurator in serviceConfigurators)
+                        configurator.Invoke(context, services);
                 })
             );
         _window = builder.Window;

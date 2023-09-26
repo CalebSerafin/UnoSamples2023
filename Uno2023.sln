@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34004.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno2023", "Uno2023\Uno2023\Uno2023.csproj", "{F4980262-0402-4AA8-9777-B20AE0453D20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno2023", "Uno2023\Uno2023\Uno2023.csproj", "{F4980262-0402-4AA8-9777-B20AE0453D20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno2023.DataContracts", "Uno2023\Uno2023.DataContracts\Uno2023.DataContracts.csproj", "{6F6643BD-36F5-42A8-B9F7-9724F8FED545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno2023.DataContracts", "Uno2023\Uno2023.DataContracts\Uno2023.DataContracts.csproj", "{6F6643BD-36F5-42A8-B9F7-9724F8FED545}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{22563173-2D02-402F-B01C-82FE83B8F653}"
 EndProject
